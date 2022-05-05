@@ -1,2 +1,2 @@
-# vrbetice
-Simulátor života.
+# Vrbětice
+Hořká reality hra.

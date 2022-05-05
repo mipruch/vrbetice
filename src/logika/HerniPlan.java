@@ -67,7 +67,7 @@ public class HerniPlan {
         Item zprava_o_vrbeticich = new Item("zprava_o_vrbeticich", true, "Putin odpálil sklad.", false);
         Item skartovacka = new Item("skartovacka", false, null, false);
         Item pudink = new Item("pudink", true, "Bych chtěl vidět tebe, jak čteš pudink...", false);
-        Item peroutkuv_clanek = new Item("peroutkuv_clanek", true, "Hitler je gentleman", true);
+        Item peroutkuv_clanek = new Item("peroutkuv_clanek", true, "Hitler je gentleman.", true);
         archiv.addItem(peroutkuv_clanek);
         skartovaci_mistnost.addItem(skartovacka);
         mynarova_kancelar.addItem(zprava_o_vrbeticich);

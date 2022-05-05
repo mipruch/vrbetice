@@ -1,0 +1,9 @@
+jdi hradni_nadvori
+jdi archiv
+jdi skartovaci_mistnost
+seber pudink
+jdi archiv
+jdi hradni_nadvori
+jdi lany
+dej zeman pudink
+mluv zeman

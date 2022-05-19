@@ -24,7 +24,7 @@ public class PrikazDej extends Prikaz{
         if (parametry[1] == null) return "Zadej, co mám dát";
         if (getHerniPlan().getInventar().obsahujeItem(parametry[1])) {
             String coDavam = parametry[1];
-            return (getHerniPlan().getAktualniProstor().getPostava(komuDavam).dej(coDavam));
+            return getHerniPlan().getAktualniProstor().getPostava(komuDavam).dej(coDavam);
         }
         return "Tento předmět nemáš u sebe.";
     }

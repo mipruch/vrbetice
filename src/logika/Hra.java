@@ -78,7 +78,7 @@ public class Hra implements IHra {
         for(int i=0 ;i<parametry.length;i++){
            	parametry[i]= slova[i+1];  	
         }
-        String textKVypsani=" .... ";
+        String textKVypsani;
         if (platnePrikazy.jePlatnyPrikaz(slovoPrikazu)) {
             IPrikaz prikaz = platnePrikazy.vratPrikaz(slovoPrikazu);
             textKVypsani = prikaz.provedPrikaz(parametry);

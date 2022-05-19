@@ -23,8 +23,6 @@ public class ProstorTest
 
     //== Příprava a úklid přípravku ================================================
 
-    private Item item1;
-    private Prostor prostor1;
 
     /***************************************************************************
      * Metoda se provede před spuštěním každé testovací metody. Používá se

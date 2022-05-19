@@ -3,7 +3,7 @@ package logika;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 /*******************************************************************************
  * Testovací třída SeznamPrikazuTest slouží ke komplexnímu otestování třídy  
@@ -51,10 +51,10 @@ public class SeznamPrikazuTest
         seznPrikazu.vlozPrikaz(prKonec);
         seznPrikazu.vlozPrikaz(prJdi);
         String nazvy = seznPrikazu.vratNazvyPrikazu();
-        assertEquals(true, nazvy.contains("konec"));
-        assertEquals(true, nazvy.contains("jdi"));
-        assertEquals(false, nazvy.contains("nápověda"));
-        assertEquals(false, nazvy.contains("Konec"));
+        assertTrue(nazvy.contains("konec"));
+        assertTrue(nazvy.contains("jdi"));
+        assertFalse(nazvy.contains("nápověda"));
+        assertFalse(nazvy.contains("Konec"));
     }
     
 }

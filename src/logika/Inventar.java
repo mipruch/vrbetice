@@ -3,7 +3,7 @@ package logika;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Inventar {
+public final class Inventar {
 
     private static Map<String, Item> veci = new HashMap<>();
 
@@ -14,8 +14,8 @@ public class Inventar {
     }
 
     public static String zobrazitInventar(){
+        if (veci.isEmpty()) return "nic";
         String vracenyText = "Obsah inventáře je: ";
-        if (veci.size() == 0) return "nic";
         for (Map.Entry<String, Item> item : veci.entrySet()){
             vracenyText += item.getKey() + " ";
         }
@@ -34,6 +34,10 @@ public class Inventar {
        Item item = veci.get(nazev);
        veci.remove(nazev);
        return item;
+   }
+
+   public boolean jePlny(){
+        return veci.size() >= 2;
    }
 
 }

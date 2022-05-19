@@ -1,11 +1,10 @@
 package uiText;
 
 
+import logika.IHra;
+
 import java.io.*;
 import java.util.Scanner;
-import java.util.function.DoubleToIntFunction;
-
-import logika.IHra;
 /**
  *  Class TextoveRozhrani
  * 

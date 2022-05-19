@@ -48,7 +48,7 @@ public class HerniPlan {
     private void zalozProstoryHry() {
         // vytvářejí se jednotlivé prostory
         Prostor hradni_nadvori = new Prostor("hradni_nadvori", "hradní nádvoří, prázdné od turistů, kvůli turniketům u vchodu");
-        Prostor mynarova_kancelar = new Prostor("mynarova_kancelar", "Mynářova kancelář s jeho vlastním portrétem přes celou stěnu a výhledem na Jelenní příkop – to je ta zanedbaná džungle");
+        Prostor mynarova_kancelar = new Prostor("mynarova_kancelar", "Mynářova kancelář zdobená jeho vlastním portrétem přes celou stěnu a výhledem na Jelenní příkop – to je ta zanedbaná džungle");
         Prostor skartovaci_mistnost = new Prostor("skartovaci_mistnost", "skartovací místnost. V temné místnosti bez oken a naleštěnou skartovačkou uprostřed místnosti");
         Prostor archiv = new Prostor("archiv", "archiv, tady něco najít, to bude trvat věčnost..");
         Prostor lany = new Prostor("lany", "Lány – zámeček jak z pohádky");
@@ -64,16 +64,15 @@ public class HerniPlan {
         skartovaci_mistnost.setVychod(archiv);
 
         // vytvářejí se jednotlivé věci do prostorů
-        Item zprava_o_vrbeticich = new Item("zprava_o_vrbeticich", true, "Putin odpálil sklad.", false);
+        Item zprava_o_vrbeticich = new Item("zprava_o_vrbeticich", true, "GRU jednotka 29155 – Alexandr Miškin a Anatolij Čepiga. 16. října 2014. Vrbětice.", false);
         Item skartovacka = new Item("skartovacka", false, null, false);
         Item pudink = new Item("pudink", true, "Bych chtěl vidět tebe, jak čteš pudink...", false);
-        Item peroutkuv_clanek = new Item("peroutkuv_clanek", true, "Hitler je gentleman.", true);
+        Item peroutkuv_clanek = new Item("peroutkuv_clanek", true, "NADPIS: Hitler je gentleman", true);
         archiv.addItem(peroutkuv_clanek);
         skartovaci_mistnost.addItem(skartovacka);
         mynarova_kancelar.addItem(zprava_o_vrbeticich);
 
         // vytvářejí se postavy
-       // Postava ovcacek = new Postava("Ovčáček", "ovcacek",peroutkuv_clanek);
         Zeman zeman = new Zeman("Zeman", "zeman", this);
         Novinar novinar = new Novinar("novinář", "novinar", this);
         Sekretarka sekretarka = new Sekretarka("sekretářka Vlasta", "sekretarka", this);

@@ -10,10 +10,10 @@ public class Heslo {
     public Heslo() {
 
 
-        String[] heslaSlova={"cuckari", "aligator", "pussy", "moskva", "krtecek"};
+        String[] heslaSlova={"cuckari", "aligator", "moskva", "krtecek", "panda", "vladimir", "clun"};
         Random random = new Random();
         int randomNumber = random.nextInt(heslaSlova.length);
-        this.hesloSlovo = (heslaSlova[randomNumber]);
+        this.hesloSlovo = heslaSlova[randomNumber];
 
 
         this.hesloCislo = new Random().nextInt(1000);

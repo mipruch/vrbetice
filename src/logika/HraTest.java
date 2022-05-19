@@ -3,7 +3,7 @@ package logika;
 import org.junit.After;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Testovací třída HraTest slouží ke komplexnímu otestování
@@ -70,5 +70,28 @@ public class HraTest {
         hra.zpracujPrikaz("jdi skartovaci_mistnost");
         hra.zpracujPrikaz("skartuj zprava_o_vrbeticich " + hra.getHerniPlan().getHeslo());
         assertEquals(true, hra.konecHry());
+    }
+
+    @Test
+    void testVzitSkartovacka(){
+        hra.zpracujPrikaz("jdi hradni_nadvori");
+        hra.zpracujPrikaz("jdi archiv");
+        hra.zpracujPrikaz("jdi skartovaci_mistnost");
+        hra.zpracujPrikaz("seber skartovacka");
+        assertEquals("skartovaci_mistnost", hra.getHerniPlan().getAktualniProstor().getNazev());
+        assertEquals(false, hra.getHerniPlan().getInventar().obsahujeItem("skartovacka"));
+    }
+
+    @Test
+    void testPlnyInventar() {
+        hra.zpracujPrikaz("seber zprava_o_vrbeticich");
+        hra.zpracujPrikaz("jdi hradni_nadvori");
+        hra.zpracujPrikaz("jdi archiv");
+        hra.zpracujPrikaz("prohledej");
+        hra.zpracujPrikaz("seber peroutkuv_clanek");
+        hra.zpracujPrikaz("jdi skartovaci_mistnost");
+        assertEquals("skartovaci_mistnost", hra.getHerniPlan().getAktualniProstor().getNazev());
+        hra.zpracujPrikaz("seber pudink");
+        assertEquals(false, hra.getHerniPlan().getInventar().obsahujeItem("pudink"));
     }
 }

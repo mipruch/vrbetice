@@ -2,15 +2,30 @@ package logika;
 
 import java.util.Random;
 
+/**
+ *  Třída implementuje rozhraní IPrikaz.
+ *  Má za úkol vypisovat dialogy, podle toho, s kým mluvím.
+ * @author Michal Průcha
+ */
 public class PrikazMluv implements IPrikaz{
 
     private static final String NAZEV = "mluv";
     private HerniPlan plan;
 
+    /**
+     * Konstruktor třídy
+     * @param plan herní plán
+     */
     public PrikazMluv(HerniPlan plan) {
         this.plan = plan;
     }
 
+    /**
+     * Metoda kontroluje správnost zadaných výrazů a zda se postava v místnostni nachází.
+     * Pokud není parametr, Mynář si mumlá pod vousy.
+     * @param parametry potřebuje 0 nebo 1 parametr.
+     * @return dialog nebo chybovouu hlášku.
+     */
     @Override
     public String provedPrikaz(String... parametry) {
         if(parametry.length > 1) return "Zadej pouze jeden parametr.";

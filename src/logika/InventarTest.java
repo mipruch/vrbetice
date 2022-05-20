@@ -21,11 +21,17 @@ public class InventarTest {
         inventar.vlozItem(new Item("testovana", true, "true", false));
     }
 
+    /**
+     * Testuje vložení věci
+     */
     @Test
     public void vlozVec() {
         assertEquals(testovana, inventar.vlozItem(testovana));
     }
 
+    /**
+     * Testuje odebrání věci
+     */
     @Test
     public void obsahujeVec() {
         assertEquals(true, inventar.obsahujeItem("testovana"));

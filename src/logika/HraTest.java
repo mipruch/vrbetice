@@ -3,7 +3,7 @@ package logika;
 import org.junit.After;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Testovací třída HraTest slouží ke komplexnímu otestování
@@ -27,7 +27,9 @@ public class HraTest {
     public void tearDown() {
     }
 
-
+    /**
+     * Testuje prohru
+     */
     @Test
     void testNovinar() {
         hra.zpracujPrikaz("seber zprava_o_vrbeticich");
@@ -35,9 +37,12 @@ public class HraTest {
         hra.zpracujPrikaz("jdi hradni_nadvori");
         assertEquals("hradni_nadvori", hra.getHerniPlan().getAktualniProstor().getNazev());
         hra.zpracujPrikaz("dej novinar zprava_o_vrbeticich");
-        assertEquals(true, hra.konecHry());
+        assertTrue(hra.konecHry());
     }
 
+    /**
+     * Testuje prohru
+     */
     @Test
     void testSkartovanyPudink() {
         hra.zpracujPrikaz("seber zprava_o_vrbeticich");
@@ -47,9 +52,12 @@ public class HraTest {
         hra.zpracujPrikaz("jdi skartovaci_mistnost");
         hra.zpracujPrikaz("seber pudink");
         hra.zpracujPrikaz("skartuj pudink " + hra.getHerniPlan().getHeslo());
-        assertEquals(true, hra.konecHry());
+        assertFalse(hra.konecHry());
     }
 
+    /**
+     * Testuje výhru
+     */
     @Test
     void testVyhra() {
         hra.zpracujPrikaz("seber zprava_o_vrbeticich");
@@ -69,9 +77,11 @@ public class HraTest {
         hra.zpracujPrikaz("jdi archiv");
         hra.zpracujPrikaz("jdi skartovaci_mistnost");
         hra.zpracujPrikaz("skartuj zprava_o_vrbeticich " + hra.getHerniPlan().getHeslo());
-        assertEquals(true, hra.konecHry());
+        assertTrue(hra.konecHry());
     }
-
+    /**
+     * Testuje, že skartovačka nejde vložit do inventáře
+     */
     @Test
     void testVzitSkartovacka(){
         hra.zpracujPrikaz("jdi hradni_nadvori");
@@ -82,6 +92,9 @@ public class HraTest {
         assertEquals(false, hra.getHerniPlan().getInventar().obsahujeItem("skartovacka"));
     }
 
+    /**
+     * Testuje omezené množství v inventáři
+     */
     @Test
     void testPlnyInventar() {
         hra.zpracujPrikaz("seber zprava_o_vrbeticich");

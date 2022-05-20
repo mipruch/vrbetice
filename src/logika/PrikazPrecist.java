@@ -1,14 +1,28 @@
 package logika;
-
+/**
+ *  Třída implementuje rozhraní IPrikaz.
+ *  Má za úkol přečíst ve hře dokument
+ * @author Michal Průcha
+ */
 public class PrikazPrecist implements IPrikaz{
 
     private static final String NAZEV = "precist";
     private HerniPlan plan;
 
+    /**
+     * Konstruktor třídy
+     * @param plan herní plán
+     */
     public PrikazPrecist(HerniPlan plan) {
         this.plan = plan;
     }
 
+    /**
+     * Metoda kontroluje správnost zadaných výrazů
+     * Kontroluje, zda hráč drží danou věc.
+     * @param parametry potřebuje 1 parametr toho, co chci přečíst.
+     * @return vrací text nebo chybovou hlášku.
+     */
     @Override
     public String provedPrikaz(String... parametry) {
 

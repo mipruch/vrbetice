@@ -1,14 +1,31 @@
 package logika;
 
+/**
+ *  Třída implementuje rozhraní IPrikaz.
+ *  Má za úkol sebrat z prostoru věc.
+ * @author Michal Průcha
+ */
 public class PrikazSeber implements IPrikaz{
 
     private static final String NAZEV = "seber";
     private HerniPlan plan;
 
+    /**
+     * Konstruktor třídy
+     * @param plan herní plán
+     */
     public PrikazSeber(HerniPlan plan) {
         this.plan = plan;
     }
 
+    /**
+     * Metoda kontroluje správnost zadaných výrazů.
+     * Kontroluje, ve které jsem místnosti a zda je věc v místnosti. Podle toho kde se nacházím, vrací různé potvrzovací zprávy.
+     * Dále kontroluje plnost inventáře.
+     *
+     * @param parametry potřebuje 1 parametr.
+     * @return vrací potvrzovací nebo chybovou hlášku.
+     */
     @Override
     public String provedPrikaz(String... parametry) {
 

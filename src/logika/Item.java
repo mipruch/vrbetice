@@ -2,6 +2,10 @@ package logika;
 
 import java.util.Objects;
 
+/**
+ * Třída Item implementuje konstruktor a metody.
+ * @author Michal Průcha
+ */
 public class Item {
 
     private String nazev;
@@ -9,6 +13,13 @@ public class Item {
     private boolean movable;
     private boolean hidden;
 
+    /**
+     * Konstruktor vytváří věc.
+     * @param nazev
+     * @param movable
+     * @param text
+     * @param hidden
+     */
     public Item(String nazev, boolean movable, String text, boolean hidden) {
         this.nazev = nazev;
         this.movable = movable;
@@ -16,15 +27,36 @@ public class Item {
         this.hidden = hidden;
     }
 
+    /**
+     * Metoda vrací název věci.
+     * @return
+     */
     public String getNazev() {
         return nazev;
     }
 
+    /**
+     * Metoda vrací, zda se dá objekt přemístit.
+     * @return
+     */
     public boolean isMovable() {
         return movable;
     }
+
+    /**
+     * Metoda vrací, zda je objekt schovaný.
+     * @return
+     */
     public boolean isHidden() {
         return hidden;
+    }
+
+    /**
+     * Metoda vrací text objektu.
+     * @return
+     */
+    public String getText() {
+        return text;
     }
 
     @Override
@@ -38,9 +70,5 @@ public class Item {
     @Override
     public int hashCode() {
         return Objects.hash(nazev);
-    }
-
-    public String getText() {
-        return text;
     }
 }

@@ -16,8 +16,8 @@ import java.util.stream.Collectors;
  * Prostor může mít sousední prostory připojené přes východy. Pro každý východ
  * si prostor ukládá odkaz na sousedící prostor.
  *
- * @author Michael Kolling, Lubos Pavlicek, Jarmila Pavlickova
- * @version pro školní rok 2016/2017
+ * @author Michael Kolling, Lubos Pavlicek, Jarmila Pavlickova, Michal Průcha
+ * @version pro školní rok 2021/2022
  */
 public class Prostor {
 
@@ -85,10 +85,10 @@ public class Prostor {
         if (!(o instanceof Prostor)) {
             return false;    // pokud parametr není typu Prostor, vrátíme false
         }
-        // přetypujeme parametr na typ Prostor 
+        // přetypujeme parametr na typ Prostor
         Prostor druhy = (Prostor) o;
 
-        //metoda equals třídy java.util.Objects porovná hodnoty obou názvů. 
+        //metoda equals třídy java.util.Objects porovná hodnoty obou názvů.
         //Vrátí true pro stejné názvy a i v případě, že jsou oba názvy null,
         //jinak vrátí false.
 
@@ -142,22 +142,31 @@ public class Prostor {
      * @return Popis východů - názvů sousedních prostorů
      */
     private String popisVychodu() {
-        String vracenyText = "východy:";
+        StringBuilder vracenyText = new StringBuilder("východy:");
         for (Prostor sousedni : vychody) {
-            vracenyText += " " + sousedni.getNazev();
+            vracenyText.append(" ").append(sousedni.getNazev());
         }
-        return vracenyText;
+        return vracenyText.toString();
     }
 
+    /**
+     * Vloží do prostoru věc
+     */
     public void addItem(Item name){
         items.add(name);
     }
+
+    /**
+     * Vloží do prostoru postavu
+     */
     public void addPostava(Postava postava){
         postavy.add(postava);
     }
 
-
-
+    /**
+     * Odebere z prostoru věc
+     * @return buď věc, nebo null
+     */
     public Item removeItem(String nazevVeci){
         for(Item wantedItem: items){
             if(wantedItem.getNazev().equals(nazevVeci)) {
@@ -168,6 +177,9 @@ public class Prostor {
         return null;
     }
 
+    /**
+     * @return vrací, zda v prostoru je věc
+     */
     public boolean containsItem(String nazevVeci){
         for (Item wantedItem : items){
             if(wantedItem.getNazev().equals(nazevVeci)) return true;
@@ -175,6 +187,9 @@ public class Prostor {
         return false;
     }
 
+    /**
+     * @return vrací, zda v prostoru je postava
+     */
     public boolean containsPostava(String nazevPostavy){
         for (Postava wantedPostava : postavy){
             if(wantedPostava.getJmeno().equals(nazevPostavy)) return true;
@@ -182,6 +197,9 @@ public class Prostor {
         return false;
     }
 
+    /**
+     * @return vrací postavu nebo null
+     */
     public Postava getPostava(String nazevPostavy){
         for (Postava wantedPostava : postavy){
             if(wantedPostava.getJmeno().equals(nazevPostavy)) return wantedPostava;
@@ -189,24 +207,29 @@ public class Prostor {
         return null;
     }
 
+    /**
+     * Kontroluje, zda je místnost prohledaná
+     * @return list věcí v místnosti, které hráč vidí.
+     */
     public String popisVeci() {
-        String vracenyText = "věci:";
+        StringBuilder vracenyText = new StringBuilder("věci:");
         for (Item wantedItem : items) {
-            if (!wantedItem.isHidden()) {
-                vracenyText += " " + wantedItem.getNazev();
-            } else if (prohledano){
-                vracenyText += " " + wantedItem.getNazev();
+            if (!wantedItem.isHidden() || prohledano) {
+                vracenyText.append(" ").append(wantedItem.getNazev());
             }
         }
-        return vracenyText;
+        return vracenyText.toString();
     }
 
+    /**
+     * @return list posatav v místnosti
+     */
     public String popisPostav(){
-        String vracenyText = "postavy:";
+        StringBuilder vracenyText = new StringBuilder("postavy:");
         for (Postava postava : postavy){
-            vracenyText += " " + postava.getJmeno();
+            vracenyText.append(" ").append(postava.getJmeno());
         }
-        return vracenyText;
+        return vracenyText.toString();
     }
 
 

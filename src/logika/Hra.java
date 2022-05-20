@@ -8,14 +8,14 @@ package logika;
  *  Vypisuje uvítací a ukončovací text hry.
  *  Také vyhodnocuje jednotlivé příkazy zadané uživatelem.
  *
- *@author     Michael Kolling, Lubos Pavlicek, Jarmila Pavlickova
- *@version    pro školní rok 2016/2017
+ *@author     Michael Kolling, Lubos Pavlicek, Jarmila Pavlickova, Michal Průcha
+ *@version    pro školní rok 2021/2022
  */
 
 public class Hra implements IHra {
     private SeznamPrikazu platnePrikazy;    // obsahuje seznam přípustných příkazů
     private HerniPlan herniPlan;
-    private boolean konecHry = false;
+    private boolean konecHry;
 
     /**
      *  Vytváří hru a inicializuje místnosti (prostřednictvím třídy HerniPlan) a seznam platných příkazů.
@@ -82,8 +82,8 @@ public class Hra implements IHra {
         if (platnePrikazy.jePlatnyPrikaz(slovoPrikazu)) {
             IPrikaz prikaz = platnePrikazy.vratPrikaz(slovoPrikazu);
             textKVypsani = prikaz.provedPrikaz(parametry);
-            if (herniPlan.jeVyhra()) {
-                konecHry = true;
+            if (herniPlan.vyhra) {
+                setKonecHry(true);
                 textKVypsani = "Úspěšně jsi skartoval Zprávu o Vrběticích. Gratuluji";
             }
         }
@@ -93,8 +93,8 @@ public class Hra implements IHra {
 
         return textKVypsani;
     }
-    
-    
+
+
      /**
      *  Nastaví, že je konec hry, metodu využívá třída PrikazKonec,
      *  mohou ji použít i další implementace rozhraní Prikaz.

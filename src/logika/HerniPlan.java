@@ -11,8 +11,12 @@ import logika.postavy.Zeman;
  * 
  *  Tato třída inicializuje prvky ze kterých se hra skládá:
  *  vytváří všechny prostory,
+ *  vytváří všechny postavy,
+ *  vytváří všechny věci,
  *  propojuje je vzájemně pomocí východů 
  *  a pamatuje si aktuální prostor, ve kterém se hráč právě nachází.
+ *  Pamatuje si, zda Mynář zná kód.
+ *  Vytváří inventář a heslo.
  *
  *@author     Michael Kolling, Lubos Pavlicek, Jarmila Pavlickova
  *@version    pro školní rok 2016/2017
@@ -23,14 +27,8 @@ public class HerniPlan {
     private Inventar inventar = new Inventar();
     private Heslo heslo = new Heslo();
     private boolean znaKod;
+    boolean vyhra;
 
-    public boolean isZnaKod() {
-        return znaKod;
-    }
-
-    public void setZnaKod(boolean znaKod) {
-        this.znaKod = znaKod;
-    }
 
     /**
      *  Konstruktor který vytváří jednotlivé prostory a propojuje je pomocí východů.
@@ -43,7 +41,7 @@ public class HerniPlan {
     }
     /**
      *  Vytváří jednotlivé prostory a propojuje je pomocí východů.
-     *  Jako výchozí aktuální prostor nastaví domeček.
+     *  Jako výchozí aktuální prostor nastaví Mynářovu kancelář.
      */
     private void zalozProstoryHry() {
         // vytvářejí se jednotlivé prostory
@@ -115,18 +113,38 @@ public class HerniPlan {
        aktualniProstor = prostor;
     }
 
-    public Postava getPostava(Postava postava){
-        return postava;
+    /**
+     * @return vrací hodnotu, zda Mynář zná heslo
+     */
+    public boolean znaKod() {
+        return znaKod;
     }
 
+    /**
+     * metoda nastavuje, zda Mynář zná heslo
+     * @param znaKod true = zná heslo, false = nezná heslo
+     */
+    public void setZnaKod(boolean znaKod) {
+        this.znaKod = znaKod;
+    }
+
+    /**
+     * @return Metoda vrací heslo
+     */
     public String getHeslo (){
         return heslo.getHeslo();
     }
 
-    public boolean jeVyhra(){
-        return false;
+    /**
+     * Metoda nastavuje výhru.
+     */
+    public void setVyhra() {
+        this.vyhra = true;
     }
 
+    /**
+     * Metoda ukončuje hru.
+     */
     public void ukonciHru() {
         hra.setKonecHry(true);
     }

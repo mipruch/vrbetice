@@ -33,7 +33,7 @@ public class Zeman extends Postava {
     public String mluvit() {
         if (hasItem("pudink")) {
             // Mynář zná heslo
-            if (getHerniPlan().isZnaKod()) {
+            if (getHerniPlan().znaKod()) {
                 return getDialogJmenovka() + "Ten pudink je opravdu výborný Vráťo.";
                 // Mynář nezná heslo
             } else {
@@ -49,7 +49,7 @@ public class Zeman extends Postava {
         // Zeman nemá pudink
         else {
             if (getHerniPlan().getInventar().obsahujeItem("zprava_o_vrbeticich")) {
-                if (getHerniPlan().isZnaKod()){
+                if (getHerniPlan().znaKod()){
                     getHerniPlan().ukonciHru();
                     return getDialogJmenovka() + "Něviděl jsi náhodou moje videokazety? Zabavili mi počítač a nemám na co koukat.\n" +
                             "MYNÁŘ: Promiň, neviděl.\n" +
@@ -70,7 +70,7 @@ public class Zeman extends Postava {
                 }
 
             } else {
-                if (getHerniPlan().isZnaKod()){
+                if (getHerniPlan().znaKod()){
                     return getDialogJmenovka() + "Něviděl jsi náhodou moje videokazety? Zabavili mi počítač a nemám na co koukat.\n" +
                             "MYNÁŘ: Promiň, neviděl.";
                 } else {

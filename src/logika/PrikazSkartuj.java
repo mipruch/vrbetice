@@ -1,16 +1,30 @@
 package logika;
 
+/**
+ *  Třída implementuje rozhraní IPrikaz.
+ *  Má za úkol skartovat věc
+ * @author Michal Průcha
+ */
 public class PrikazSkartuj implements IPrikaz{
 
     private static final String NAZEV = "skartuj";
     private HerniPlan plan;
 
-
+    /**
+     * Konstruktor třídy
+     * @param plan herní plán
+     */
     public PrikazSkartuj(HerniPlan plan) {
         this.plan = plan;
     }
 
-
+    /**
+     * Metoda kontroluje správnost zadaných výrazů
+     * Kontroluje, zda hráč drží danou věc a zda je skartovačka v místnosti.
+     * Po použití hra končí buď prohrou nebo výhrou
+     * @param parametry potřebuje 2 parametry. Věc a heslo.
+     * @return vrací potvrzovací nebo chybovou hlášku.
+     */
     @Override
     public String provedPrikaz(String... parametry) {
         if (parametry.length > 2) return "Uveď pouze dva parametry. Co chceš skartovat a heslo ke skartovačce";
@@ -28,6 +42,7 @@ public class PrikazSkartuj implements IPrikaz{
                         case "pudink":
                             return "Rozbil jsi skartovačku, prohrál jsi.";
                         case "zprava_o_vrbeticich":
+                            plan.setVyhra();
                             return "Zničil jsi přísně utajovaný dokument.\n" +
                                     "Tvůj Pán se tak nikdy nedozví, co v něm stálo.\n" +
                                     "Úspěšně jsi dokončil hru, gratuluji.";

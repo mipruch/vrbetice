@@ -1,9 +1,11 @@
 package logika;
 
+/**
+ * Interface k třídám postav
+ * @author Michal Průcha
+ */
 public interface IPostava {
 
-    public String mluvit();
-    public String dej(String vec);
-//    public String seber();
-
+    String mluvit();
+    String dej(String vec);
 }

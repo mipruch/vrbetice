@@ -4,11 +4,20 @@ import logika.HerniPlan;
 import logika.Item;
 import logika.Postava;
 
+/**
+ *  Třída rozšiřuje třídu Postava.
+ * @author Michal Průcha
+ */
 public class Sekretarka extends Postava {
     public Sekretarka(String fullJmeno, String jmeno, HerniPlan plan) {
         super(fullJmeno, jmeno, plan);
     }
 
+    /**
+     * Metoda se stará o příkaz dej.
+     * @param coDavam věc, kterou chci dát
+     * @return dialogy
+     */
     @Override
     public String dej(String coDavam) {
         switch (coDavam){
@@ -27,6 +36,10 @@ public class Sekretarka extends Postava {
         }
     }
 
+    /**
+     * Metoda se stará o příkaz mluv.
+     * @return dialogy
+     */
     @Override
     public String mluvit() {
         if (hasItem("pudink")){

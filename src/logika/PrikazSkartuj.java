@@ -43,9 +43,10 @@ public class PrikazSkartuj implements IPrikaz{
                             return "Rozbil jsi skartovačku, prohrál jsi.";
                         case "zprava_o_vrbeticich":
                             plan.setVyhra();
-                            return "Zničil jsi přísně utajovaný dokument.\n" +
-                                    "Tvůj Pán se tak nikdy nedozví, co v něm stálo.\n" +
-                                    "Úspěšně jsi dokončil hru, gratuluji.";
+                            return """
+                                    Zničil jsi přísně utajovaný dokument.
+                                    Tvůj Pán se tak nikdy nedozví, co v něm stálo.
+                                    Úspěšně jsi dokončil hru, gratuluji.""";
                         case "peroutkuv_clanek":
                             return "Tvůj pán bude již navždy lhářem. Za to ti nepoděkuje, prohrál jsi.";
                     }

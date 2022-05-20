@@ -27,11 +27,11 @@ public final class Inventar {
      */
     public static String zobrazitInventar(){
         if (veci.isEmpty()) return "nic";
-        String vracenyText = "Obsah inventáře je: ";
+        StringBuilder vracenyText = new StringBuilder("Obsah inventáře je: ");
         for (Map.Entry<String, Item> item : veci.entrySet()){
-            vracenyText += item.getKey() + " ";
+            vracenyText.append(item.getKey()).append(" ");
         }
-        return vracenyText;
+        return vracenyText.toString();
     }
 
     /**

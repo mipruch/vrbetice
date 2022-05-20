@@ -4,11 +4,20 @@ import logika.HerniPlan;
 import logika.Item;
 import logika.Postava;
 
+/**
+ *  Třída rozšiřuje třídu Postava.
+ * @author Michal Průcha
+ */
 public class Ovcacek extends Postava {
     public Ovcacek(String fullJmeno, String jmeno, HerniPlan plan) {
         super(fullJmeno, jmeno, plan);
     }
 
+    /**
+     * Metoda se stará o příkaz dej.
+     * @param coDavam věc, kterou chci dát
+     * @return dialogy
+     */
     @Override
     public String dej(String coDavam) {
         switch (coDavam){
@@ -28,6 +37,10 @@ public class Ovcacek extends Postava {
         }
     }
 
+    /**
+     * Metoda se stará o příkaz mluv.
+     * @return dialogy
+     */
     @Override
     public String mluvit() {
         if (hasItem("peroutkuv_clanek"))

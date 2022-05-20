@@ -32,17 +32,17 @@ public class SeznamPrikazuTest
         seznPrikazu.vlozPrikaz(prJdi);
         assertEquals(prKonec, seznPrikazu.vratPrikaz("konec"));
         assertEquals(prJdi, seznPrikazu.vratPrikaz("jdi"));
-        assertEquals(null, seznPrikazu.vratPrikaz("nápověda"));
+        assertNull(seznPrikazu.vratPrikaz("nápověda"));
     }
     @Test
     public void testJePlatnyPrikaz() {
         SeznamPrikazu seznPrikazu = new SeznamPrikazu();
         seznPrikazu.vlozPrikaz(prKonec);
         seznPrikazu.vlozPrikaz(prJdi);
-        assertEquals(true, seznPrikazu.jePlatnyPrikaz("konec"));
-        assertEquals(true, seznPrikazu.jePlatnyPrikaz("jdi"));
-        assertEquals(false, seznPrikazu.jePlatnyPrikaz("nápověda"));
-        assertEquals(false, seznPrikazu.jePlatnyPrikaz("Konec"));
+        assertTrue(seznPrikazu.jePlatnyPrikaz("konec"));
+        assertTrue(seznPrikazu.jePlatnyPrikaz("jdi"));
+        assertFalse(seznPrikazu.jePlatnyPrikaz("nápověda"));
+        assertFalse(seznPrikazu.jePlatnyPrikaz("Konec"));
     }
     
     @Test

@@ -5,7 +5,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 /**
  * Testovací třída ProstorTest slouží ke komplexnímu otestování
@@ -44,7 +44,7 @@ public class ProstorTest
         prostor1.setVychod(prostor2);
         prostor2.setVychod(prostor1);
         assertEquals(prostor2, prostor1.vratSousedniProstor("prostor2"));
-        assertEquals(null, prostor2.vratSousedniProstor("prostor 3"));
+        assertNull(prostor2.vratSousedniProstor("prostor 3"));
     }
 
     @Test
@@ -53,8 +53,8 @@ public class ProstorTest
         Prostor prostor1 = new Prostor("prostor1", "toto je prostor 1");
         Item vec1 = new Item("pudink", true, "Pudink nelze přečíst", false);
         prostor1.addItem(vec1);
-        assertEquals(true, prostor1.containsItem("pudink"));
-        assertEquals(false, prostor1.containsItem("skartovacka"));
+        assertTrue(prostor1.containsItem("pudink"));
+        assertFalse(prostor1.containsItem("skartovacka"));
     }
 
 

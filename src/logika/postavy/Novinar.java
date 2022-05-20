@@ -3,11 +3,20 @@ package logika.postavy;
 import logika.HerniPlan;
 import logika.Postava;
 
+/**
+ *  Třída rozšiřuje třídu Postava.
+ * @author Michal Průcha
+ */
 public class Novinar extends Postava {
     public Novinar(String fullJmeno, String jmeno, HerniPlan plan) {
         super(fullJmeno, jmeno, plan);
     }
 
+    /**
+     * Metoda se stará o příkaz dej.
+     * @param coDavam věc, kterou chci dát
+     * @return dialogy
+     */
     @Override
     public String dej(String coDavam) {
         switch (coDavam){
@@ -25,6 +34,10 @@ public class Novinar extends Postava {
         }
     }
 
+    /**
+     * Metoda se stará o příkaz mluv.
+     * @return dialogy
+     */
     @Override
     public String mluvit() {
         return "Zbláznil ses? S novináři přece nemluvíš.";

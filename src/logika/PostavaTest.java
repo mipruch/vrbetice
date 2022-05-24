@@ -7,7 +7,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-/*******************************************************************************
+/**
  * Testovací třída PostavaTest slouží k otestování příkazu mluvit jednotlivých postav.
  *
  * @author    Jarmila Pavlíčková, Michal Průcha

@@ -4,6 +4,7 @@ package logika;
  *  Třída implementuje rozhraní IPrikaz.
  *  Má za úkol skartovat věc
  * @author Michal Průcha
+ * @version pro školní rok 2021/2022
  */
 public class PrikazSkartuj implements IPrikaz{
 

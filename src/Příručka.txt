@@ -1,0 +1,17 @@
+VRBĚTICE
+
+Vrbětice je jednoduchá hra s textovým rozhraním. Cílemm hráče je vyřešit vzniklou situaci potom, co Bezpečnostní informační služba ČR odhalila, jak to bylo s výbuchem muničního skladu ve Vrběticích ve skutečnosti.
+Cílem hráče je přijít na řešení v průběhu hry, proto tu nebudu děj více rozepisovat.
+Hra se odehrává převážně na Pražském hradě v dubnu 2021.
+
+Hra se ovládá vypisováním těchto textových příkazů do terminálu:
+    – nápověda      vypíše všechny dostupné příkazy a cíl hry
+    – mluv          pro interakci s postavou je zapotřebí napsat také, s kým chci mluvit. (mluv pepa)
+    – prohledej     prohledá aktuální místnost, jestli se v ní nenachází schované předměty
+    – dej           pomocí tohoto příkazu předáme určitou věc jiné postavě. Je zapotřebí věc a postavu zmínit (dej pepa auto)
+    – precist       některé předměty mohou obsahovat text. Tento příkaz text vypíše. Je zapotřebí věc upřesnit (precist kniha)
+    – inventrar     vypíše věci, které se nacházejí v hráčově inventáři
+    – jdi           příkaz slouží k přechodu do sousedící místnosti. Je zapotřebí místnost upřesnit (jdi zahrada)
+    – seber         pomocí příkazu hráč sebere z místnosti předmět. Je zapotřebí předmět upřesnit (seber kniha)
+    – konec         příkaz ukončí hru
+    – skartuj       pomocí příkazu hráč skartuje předmět. Je zapotřebí předmět upřesnit (skartuj kniha)

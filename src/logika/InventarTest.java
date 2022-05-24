@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 /**
  * Testuje vládání a odebírání itemů
  * @author Michal Průcha
- *    @version pro školní rok 2021/2022
+ * @version pro školní rok 2021/2022
  */
 
 public class InventarTest {

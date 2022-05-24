@@ -6,6 +6,7 @@ import java.util.Random;
  *  Třída implementuje rozhraní IPrikaz.
  *  Má za úkol vypisovat dialogy, podle toho, s kým mluvím.
  * @author Michal Průcha
+ * @version pro školní rok 2021/2022
  */
 public class PrikazMluv implements IPrikaz{
 

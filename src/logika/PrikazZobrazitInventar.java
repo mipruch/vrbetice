@@ -3,6 +3,7 @@ package logika;
 /**
  * Třída PrikazZobrazInventar vypíše to terminálu obsah inventáře
  * @author Michal Průcha
+ * @version pro školní rok 2021/2022
  */
 public class PrikazZobrazitInventar implements IPrikaz{
 

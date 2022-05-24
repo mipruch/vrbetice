@@ -6,6 +6,7 @@ import java.util.Map;
 /**
  * Třída Inventář implementuje metody k chování inventáře.
  * @author Michal Průcha
+ * @version pro školní rok 2021/2022
  */
 public final class Inventar {
 

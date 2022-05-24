@@ -3,6 +3,7 @@ package logika;
  *  Třída implementuje rozhraní IPrikaz.
  *  Má za úkol prohledat místnost
  * @author Michal Průcha
+ * @version pro školní rok 2021/2022
  */
 public class PrikazProhledej implements IPrikaz{
 

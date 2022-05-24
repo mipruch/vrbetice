@@ -19,7 +19,7 @@ import logika.postavy.Zeman;
  *  Vytváří inventář a heslo.
  *
  *@author     Michael Kolling, Lubos Pavlicek, Jarmila Pavlickova
- *@version    pro školní rok 2016/2017
+ *@version    pro školní rok 2021/2022
  */
 public class HerniPlan {
     private Hra hra;
